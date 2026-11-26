@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案 | 専門学校 新設ブランディング & Webサイト制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink-vivid: #FF6B9D;
+    --pink-soft: #FFD4E5;
+    --cream: #FFF8FA;
+    --ink: #2B2630;
+    --lavender: #C9B6E4;
+    --gold: #E3B065;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    overflow-x:hidden;
+    line-height:1.8;
+  }
+
+  h1,h2,h3{
+    font-family:'Kaisei Decol', serif;
+    letter-spacing:0.04em;
+  }
+
+  .accent{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 20% 15%, #FFE3EE 0%, transparent 45%),
+      radial-gradient(circle at 85% 80%, #ECE0FA 0%, transparent 50%),
+      linear-gradient(170deg, #FFF8FA 0%, #FFEFF5 60%, #FDF4FF 100%);
+    padding:120px 24px 100px;
+  }
+
+  .hero-ring{
+    position:absolute;
+    border-radius:50%;
+    border:1.5px solid rgba(255,107,157,0.35);
+  }
+  .ring1{ width:620px; height:620px; top:-180px; left:-180px; }
+  .ring2{ width:420px; height:420px; bottom:-120px; right:-80px; border-color:rgba(201,182,228,0.5); }
+  .ring3{ width:260px; height:260px; top:40%; right:6%; border-color:rgba(227,176,101,0.4); }
+
+  .sparkle{
+    position:absolute;
+    background:var(--gold);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .sp1{ width:22px; height:22px; top:18%; left:12%; opacity:0.8; }
+  .sp2{ width:14px; height:14px; top:28%; right:18%; background:var(--pink-vivid); opacity:0.7;}
+  .sp3{ width:18px; height:18px; bottom:14%; left:20%; background:var(--lavender); opacity:0.8;}
+
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:820px;
+  }
+
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#fff;
+    border:1px solid var(--pink-soft);
+    padding:8px 22px;
+    border-radius:999px;
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    color:var(--pink-vivid);
+    font-weight:700;
+    margin-bottom:38px;
+    box-shadow:0 6px 16px rgba(255,107,157,0.12);
+  }
+
+  .hero-badge::before{
+    content:'';
+    width:7px;height:7px;
+    background:var(--pink-vivid);
+    border-radius:50%;
+  }
+
+  .hero h1{
+    font-size:clamp(2.1rem, 5.2vw, 3.6rem);
+    line-height:1.5;
+    color:var(--ink);
+    font-weight:700;
+  }
+
+  .hero h1 span{
+    color:var(--pink-vivid);
+    position:relative;
+    white-space:nowrap;
+  }
+
+  .hero-sub{
+    margin-top:28px;
+    font-size:1.02rem;
+    color:#5a5260;
+    font-weight:500;
+  }
+
+  .hero-ribbon-wrap{
+    display:flex;
+    justify-content:center;
+    margin:48px 0 10px;
+    gap:28px;
+    align-items:center;
+  }
+
+  .ribbon-icon{
+    position:relative;
+    width:56px; height:38px;
+  }
+  .ribbon-icon::before, .ribbon-icon::after{
+    content:'';
+    position:absolute;
+    top:0;
+    width:0;height:0;
+    border-style:solid;
+  }
+  .ribbon-icon::before{
+    left:0;
+    border-width:19px 14px 19px 0;
+    border-color:transparent var(--pink-vivid) transparent transparent;
+  }
+  .ribbon-icon::after{
+    right:0;
+    border-width:19px 0 19px 14px;
+    border-color:transparent transparent transparent var(--pink-vivid);
+  }
+  .ribbon-icon .ribbon-center{
+    position:absolute;
+    left:50%; top:50%;
+    transform:translate(-50%,-50%);
+    width:22px; height:22px;
+    background:#fff;
+    border:2.5px solid var(--gold);
+    border-radius:50%;
+  }
+
+  .hero-tagline{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:0.95rem;
+    color:var(--lavender);
+    font-weight:700;
+    letter-spacing:0.08em;
+  }
+
+  /* ===== SECTION COMMON ===== */
+  section{
+    position:relative;
+    padding:110px 0;
+  }
+
+  .sec-label{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.22em;
+    color:var(--pink-vivid);
+    font-weight:800;
+    text-align:center;
+    margin-bottom:18px;
+  }
+
+  .sec-title{
+    text-align:center;
+    font-size:clamp(1.6rem, 3.6vw, 2.3rem);
+    margin-bottom:20px;
+    color:var(--ink);
+  }
+
+  .sec-desc{
+    text-align:center;
+    max-width:680px;
+    margin:0 auto 70px;
+    color:#5a5260;
+    font-size:0.98rem;
+  }
+
+  .divider-dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:56px;
+  }
+  .divider-dots span{
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--pink-soft);
+  }
+  .divider-dots span:nth-child(2){ background:var(--lavender); }
+  .divider-dots span:nth-child(3){ background:var(--gold); }
+
+  /* ===== UNDERSTANDING ===== */
+  .understanding{
+    background:#fff;
+  }
+
+  .understand-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+  }
+
+  .understand-visual{
+    position:relative;
+    height:360px;
+    background:linear-gradient(145deg, #FFEFF5, #F3E8FB);
+    border-radius:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+
+  .understand-visual::before{
+    content:'';
+    position:absolute;
+    width:220px;height:220px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,107,157,0.22), transparent 70%);
+    top:-40px; left:-40px;
+  }
+  .understand-visual::after{
+    content:'';
+    position:absolute;
+    width:180px;height:180px;
+    border-radius:50%;
+    border:2px dashed rgba(227,176,101,0.5);
+    bottom:-50px; right:-30px;
+  }
+
+  .understand-visual-text{
+    position:relative;
+    z-index:2;
+    font-family:'Kaisei Decol', serif;
+    font-size:1.5rem;
+    color:var(--ink);
+    text-align:center;
+    padding:0 40px;
+    line-height:2;
+  }
+  .understand-visual-text em{
+    display:block;
+    font-style:normal;
+    color:var(--pink-vivid);
+    font-size:0.95rem;
+    letter-spacing:0.1em;
+    margin-top:14px;
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-weight:700;
+  }
+
+  .understand-text h3{
+    font-size:1.4rem;
+    margin-bottom:22px;
+    color:var(--ink);
+  }
+
+  .understand-text p{
+    color:#5a5260;
+    margin-bottom:18px;
+    font-size:0.96rem;
+  }
+
+  .understand-text .highlight{
+    background:linear-gradient(transparent 65%, var(--pink-soft) 65%);
+    font-weight:700;
+  }
+
+  /* ===== VALUES ===== */
+  .values{
+    background:
+      radial-gradient(circle at 90% 10%, rgba(201,182,228,0.15), transparent 50%),
+      var(--cream);
+  }
+
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+
+  .value-card{
+    background:#fff;
+    border-radius:24px;
+    padding:38px 28px;
+    box-shadow:0 12px 30px rgba(43,38,48,0.06);
+    border:1px solid #FFEAF1;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .value-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 36px rgba(255,107,157,0.15);
+  }
+
+  .value-num{
+    font-family:'Kaisei Decol', serif;
+    font-size:0.85rem;
+    color:#fff;
+    background:var(--pink-vivid);
+    width:36px; height:36px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+    font-weight:700;
+  }
+
+  .value-card:nth-child(2) .value-num{ background:var(--lavender); }
+  .value-card:nth-child(3) .value-num{ background:var(--gold); }
+  .value-card:nth-child(4) .value-num{ background:var(--lavender); }
+  .value-card:nth-child(5) .value-num{ background:var(--pink-vivid); }
+
+  .value-card h3{
+    font-size:1.12rem;
+    margin-bottom:14px;
+    color:var(--ink);
+  }
+
+  .value-card p{
+    font-size:0.88rem;
+    color:#6b6370;
+  }
+
+  /* ===== SCHEDULE ===== */
+  .schedule{
+    background:#fff;
+    position:relative;
+  }
+
+  .schedule::before{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0;
+    height:80px;
+    background:var(--cream);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+  }
+
+  .timeline{
+    position:relative;
+    max-width:760px;
+    margin:0 auto;
+    padding-left:36px;
+  }
+
+  .timeline::before{
+    content:'';
+    position:absolute;
+    left:9px; top:6px; bottom:6px;
+    width:2px;
+    background:linear-gradient(var(--pink-soft), var(--lavender), var(--gold));
+  }
+
+  .tl-item{
+    position:relative;
+    margin-bottom:46px;
+  }
+  .tl-item:last-child{ margin-bottom:0; }
+
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-36px; top:4px;
+    width:20px; height:20px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--pink-vivid);
+  }
+  .tl-item:nth-child(2)::before{ border-color:var(--lavender); }
+  .tl-item:nth-child(3)::before{ border-color:var(--gold); }
+  .tl-item:nth-child(4)::before{ border-color:var(--lavender); }
+  .tl-item:nth-child(5)::before{ border-color:var(--pink-vivid); }
+
+  .tl-period{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:0.78rem;
+    color:var(--pink-vivid);
+    font-weight:800;
+    letter-spacing:0.08em;
+    margin-bottom:6px;
+  }
+
+  .tl-item h3{
+    font-size:1.1rem;
+    margin-bottom:8px;
+    color:var(--ink);
+  }
+
+  .tl-item p{
+    font-size:0.88rem;
+    color:#6b6370;
+  }
+
+  /* ===== CLOSING ===== */
+  .closing{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(255,255,255,0.1), transparent 45%),
+      linear-gradient(135deg, #FF6B9D 0%, #E35C8C 55%, #C9B6E4 100%);
+    text-align:center;
+    color:#fff;
+    padding:120px 24px;
+  }
+
+  .closing h2{
+    font-size:clamp(1.6rem, 4vw, 2.4rem);
+    margin-bottom:22px;
+  }
+
+  .closing p{
+    max-width:600px;
+    margin:0 auto 42px;
+    font-size:0.98rem;
+    opacity:0.95;
+  }
+
+  .cta-btn{
+    display:inline-block;
+    background:#fff;
+    color:var(--pink-vivid);
+    font-weight:800;
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    padding:18px 48px;
+    border-radius:999px;
+    text-decoration:none;
+    letter-spacing:0.06em;
+    box-shadow:0 14px 30px rgba(0,0,0,0.18);
+    transition:transform .25s ease;
+  }
+  .cta-btn:hover{ transform:translateY(-3px); }
+
+  .closing-sign{
+    margin-top:54px;
+    font-size:0.8rem;
+    opacity:0.85;
+    letter-spacing:0.1em;
+  }
+
+  footer{
+    background:var(--ink);
+    color:#cbb;
+    text-align:center;
+    padding:28px;
+    font-size:0.75rem;
+    letter-spacing:0.08em;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:860px){
+    .understand-grid{
+      grid-template-columns:1fr;
+    }
+    .understand-visual{ height:280px; }
+    .value-grid{
+      grid-template-columns:1fr 1fr;
+    }
+  }
+
+  @media (max-width:560px){
+    section{ padding:80px 0; }
+    .hero{ min-height:auto; padding:140px 20px 90px; }
+    .hero-ribbon-wrap{ gap:16px; }
+    .value-grid{ grid-template-columns:1fr; }
+    .ring1{ width:360px; height:360px; }
+    .ring2{ width:260px; height:260px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-ring ring1"></div>
+    <div class="hero-ring ring2"></div>
+    <div class="hero-ring ring3"></div>
+    <div class="sparkle sp1"></div>
+    <div class="sparkle sp2"></div>
+    <div class="sparkle sp3"></div>
+
+    <div class="hero-inner">
+      <div class="hero-badge">Kairos からの企画提案</div>
+      <h1>"かわいい"は、<br><span>信頼できる学校</span>にしか似合わない。</h1>
+      <p class="hero-sub">新しく生まれる専門学校の、最初の制服をつくる仕事だと思っています。<br>見た目のかわいさと、選ばれる理由。その両方を、同じ熱量でデザインします。</p>
+
+      <div class="hero-ribbon-wrap">
+        <div class="ribbon-icon"><div class="ribbon-center"></div></div>
+      </div>
+      <div class="hero-tagline">KAIROS BRANDING PROPOSAL</div>
+    </div>
+  </section>
+
+  <!-- ===== UNDERSTANDING ===== -->
+  <section class="understanding">
+    <div class="container">
+      <div class="sec-label">ABOUT YOUR PROJECT</div>
+      <h2 class="sec-title">この案件、こう理解しています。</h2>
+      <p class="sec-desc">開校前の専門学校には「実績」がまだありません。だからこそ、サイトそのものが最初の説得材料になります。</p>
+
+      <div class="understand-grid">
+        <div class="understand-visual">
+          <div class="understand-visual-text">
+            かわいい、だけじゃ<br>決め手にならない
+            <em>— 10代の憧れ × 保護者の安心 —</em>
+          </div>
+        </div>
+
+        <div class="understand-text">
+          <h3>二つの視線に、同時に応える設計が必要です。</h3>
+          <p>戸板女子短期大学、モード学園、澁谷女子インターナショナル——参考にいただいたサイトはどれも、<span class="highlight">「かわいい」と「本格的」を両立</span>させているのが共通点でした。</p>
+          <p>進学先を選ぶのは本人ですが、学費を決めるのは保護者です。10代女性の心をつかむビジュアルの奥に、30〜40代が安心して背中を押せる情報設計（学費・就職・資格・通学動線）を仕込む必要があります。</p>
+          <p>そして新設校である以上、<span class="highlight">検索で見つけてもらうこと自体が最初の課題</span>になります。SEOは後付けではなく、ページ構成の初期段階から組み込みます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUES ===== -->
+  <section class="values">
+    <div class="container">
+      <div class="sec-label">WHAT KAIROS CAN DO</div>
+      <h2 class="sec-title">Kairosがご提供できること</h2>
+      <p class="sec-desc">デザインから実装、SEOまで。開校までの限られた時間で、ワンチームで走り切ります。</p>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-num">01</div>
+          <h3>ブランドの軸づくり</h3>
+          <p>校名・教育理念から「かわいい」の方向性を言語化し、色・ロゴ的モチーフ・トーンの統一ルールを設計します。参考3サイトの良さを分解し、御校らしさへ翻訳します。</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">02</div>
+          <h3>二層に届くデザイン</h3>
+          <p>学生向けの世界観と、保護者向けの安心情報（学費・資格・就職実績）を、同じページの中で破綻なく共存させるレイアウトを設計します。</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">03</div>
+          <h3>全6ページの設計〜実装</h3>
+          <p>トップ・学科紹介・学校生活・入学案内・アクセス・お問い合わせなど、入学検討の導線を想定した構成案から、コーディングまで一貫対応します。</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">04</div>
+          <h3>完全レスポンシブ</h3>
+          <p>オープンキャンパス前に多くの検討者がスマホで検索・閲覧します。スマホ起点で崩れない、むしろスマホで映えるデザインを前提に設計します。</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">05</div>
+          <h3>新設校のためのSEO</h3>
+          <p>実績ゼロからのスタートを踏まえ、学科名・地域名での検索を想定した内部構造・メタ設計・表示速度対策まで含めて対応します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCHEDULE ===== -->
+  <section class="schedule">
+    <div class="container">
+      <div class="sec-label">HOW WE WORK</div>
+      <h2 class="sec-title">3月納品までの進め方</h2>
+      <p class="sec-desc">ご提供いただく画像・文章をもとに、最短ルートでブランドの土台から形にします。</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-period">STEP 01｜1週目</div>
+          <h3>ヒアリング＆ブランドコンセプト設計</h3>
+          <p>教育理念・ターゲット・参考サイトの意図を伺い、トンマナ（配色・雰囲気・言葉遣い）の方向性を固めます。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">STEP 02｜2〜3週目</div>
+          <h3>デザイン制作（全6ページ）</h3>
+          <p>トップページから優先的にデザイン案を作成し、ご確認いただきながら他ページへ展開します。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">STEP 03｜4〜5週目</div>
+          <h3>コーディング＆レスポンシブ実装</h3>
+          <p>PC・タブレット・スマホの全幅での表示を確認しながら実装。SEOを意識したマークアップも並行して行います。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">STEP 04｜6週目</div>
+          <h3>SEO設定・最終チェック</h3>
+          <p>タイトル・meta設計、表示速度、サーバー設定への対応を実施。公開前の総合チェックを行います。</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">STEP 05｜3月</div>
+          <h3>納品・公開</h3>
+          <p>開校準備のスケジュールに合わせて、余裕を持った公開を目指します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLOSING ===== -->
+  <section class="closing">
+    <h2>最初の生徒に出会う前に、<br>最初の一歩をデザインしましょう。</h2>
+    <p>ワイヤーやラフがない状態からでも大丈夫です。教育理念やご用意の素材をもとに、Kairosが構成案からご提案します。まずは一度、お話を聞かせてください。</p>
+    <a href="#" class="cta-btn">Kairosに相談してみる</a>
+    <div class="closing-sign">Proposed by Kairos — Web制作・システム開発チーム</div>
+  </section>
+
+  <footer>
+    © Kairos / Web Design &amp; Development Team — This is a project proposal page.
+  </footer>
+
+</body>
+</html>
